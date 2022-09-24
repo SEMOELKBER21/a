@@ -17208,6 +17208,37 @@ else
 return send(msg_chat_id,msg_id, "⋆ عدد النقاط التي ربحتها *↫ "..Num.." *","md",true)  
 end
 end
+if text == "الحاسبه" or text == "اله حاسبه" or text == "الاله الحاسبه" then
+Redis:del(black..msg.sender_id.user_id..msg.chat_id.."num")
+start_mrkup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'ON', data = msg.sender_id.user_id..'ON'},{text = 'DEL', data = msg.sender_id.user_id..'DEL'},{text = 'AC', data = msg.sender_id.user_id..'rest'},{text = 'OFF', data = msg.sender_id.user_id..'OFF'},
+},
+{
+{text = '^', data = msg.sender_id.user_id..'calc&^'},{text = '√', data = msg.sender_id.user_id..'calc&√'},{text = '(', data = msg.sender_id.user_id..'calc&('},{text = ')', data = msg.sender_id.user_id..'calc&)'},
+},
+{
+{text = '7', data = msg.sender_id.user_id..'calc&7'},{text = '8', data = msg.sender_id.user_id..'calc&8'},{text = '9', data = msg.sender_id.user_id..'calc&9'},{text = '÷', data = msg.sender_id.user_id..'calc&/'},
+},
+{
+{text = '4', data = msg.sender_id.user_id..'calc&4'},{text = '5', data = msg.sender_id.user_id..'calc&5'},{text = '6', data = msg.sender_id.user_id..'calc&6'},{text = 'x', data = msg.sender_id.user_id..'calc&*'},
+},
+{
+{text = '1', data = msg.sender_id.user_id..'calc&1'},{text = '2', data = msg.sender_id.user_id..'calc&2'},{text = '3', data = msg.sender_id.user_id..'calc&3'},{text = '-', data = msg.sender_id.user_id..'calc&-'},
+},
+{
+{text = '0', data = msg.sender_id.user_id..'calc&0'},{text = '.', data = msg.sender_id.user_id..'calc&.'},{text = '+', data = msg.sender_id.user_id..'calc&+'},{text = '=', data = msg.sender_id.user_id..'equal'},
+},
+{
+{text = 'مطور السورس', url = 'https://t.me/R_p_9'},
+},
+}
+}
+send(msg.chat_id,msg.id,"• اهلا بك في بوت الحاسبه\n• welcome to calculator","md",true, false, false, true, start_mrkup)
+return false 
+end
 
 if text == 'ترتيب الاوامر' then
 if not msg.Manger then
