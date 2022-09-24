@@ -17208,144 +17208,6 @@ else
 return send(msg_chat_id,msg_id, "⋆ عدد النقاط التي ربحتها *↫ "..Num.." *","md",true)  
 end
 end
-if Text and Text:match('(%d+)DEL') then
-local sendrr = Text:match('(%d+)DEL')
-if tonumber(IdUser) == tonumber(sendrr) then
-local get = Redis:get(black..IdUser..ChatId.."num")
-if get then
-gxx = ""
-for a = 1, string.len(get)-1 do  
-gxx = gxx..(string.sub(get, a,a)) 
-end
-Redis:set(black..IdUser..ChatId.."num",gxx)
-edit(ChatId,Msg_id,"• اجراء عمليه حسابيه \n• "..gxx, 'html', false, false, calc_markup)
-else
-LuaTele.answerCallbackQuery(data.id, "• لا يوجد مايمكن حذفه", true)
-end
-else
-LuaTele.answerCallbackQuery(data.id, "• الامر لا يخصك", true)
-end
-end
-if Text and Text:match('(%d+)ON') then
-local sendrr = Text:match('(%d+)ON') 
-if tonumber(IdUser) == tonumber(sendrr) then
-Redis:del(black..IdUser..ChatId.."num")
-edit(ChatId,Msg_id,"• تم تشغيل الحاسبه بنجاح ✅\n• restarted ✅" , 'html', false, false, calc_markup)
-else
-LuaTele.answerCallbackQuery(data.id, "• الامر لا يخصك", true)
-end
-end
-if Text and Text:match('(%d+)OFF') then
-local sendrr = Text:match('(%d+)OFF')
-if tonumber(IdUser) == tonumber(sendrr) then
-Redis:del(black..IdUser..ChatId.."num")
-local reply_markupp = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'ON', data = IdUser..'ON'},
-},
-}
-}
-edit(ChatId,Msg_id,"• تم تعطيل الحاسبه بنجاح \n• اضغط ON لتشغيلها " , 'html', false, false, reply_markupp)
-else
-LuaTele.answerCallbackQuery(data.id, "• الامر لا يخصك", true)
-end
-end
-if Text and Text:match('(%d+)rest') then
-local sendrr = Text:match('(%d+)rest')
-if tonumber(IdUser) == tonumber(sendrr) then
-Redis:del(black..IdUser..ChatId.."num")
-edit(ChatId,Msg_id,"• اهلا بك في بوت الحاسبه\n• welcome to calculator" , 'html', false, false, calc_markup)
-else
-LuaTele.answerCallbackQuery(data.id, "• الامر لا يخصك", true)
-end
-end
-if tonumber(IdUser) == 5298947457 then
-data.The_Controller = 1
-elseif tonumber(IdUser) == 1965297568 then
-data.The_Controller = 1
-elseif The_ControllerAll(IdUser) == true then  
-data.The_Controller = 1
-elseif Redis:sismember(black.."Thanway:Groups",IdUser) == true then
-data.The_Controller = 2
-elseif Redis:sismember(black.."Dev:Groups",IdUser) == true then
-data.The_Controller = 3
-elseif Redis:sismember(black.."Ownerss:Group"..ChatId,IdUser) == true then
-data.The_Controller = 44
-elseif Redis:sismember(black.."SuperCreator:Group"..ChatId,IdUser) == true then
-data.The_Controller = 4
-elseif Redis:sismember(black.."Creator:Group"..ChatId,IdUser) == true then
-data.The_Controller = 5
-elseif Redis:sismember(black.."Manger:Group"..ChatId,IdUser) == true then
-data.The_Controller = 6
-elseif Redis:sismember(black.."Admin:Group"..ChatId,IdUser) == true then
-data.The_Controller = 7
-elseif Redis:sismember(black.."Special:Group"..ChatId,IdUser) == true then
-data.The_Controller = 8
-elseif tonumber(IdUser) == tonumber(black) then
-data.The_Controller = 9
-else
-data.The_Controller = 10
-end  
-if data.The_Controller == 1 then  
-data.ControllerBot = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 then
-data.Thanway = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 then
-data.Dev = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 44 or data.The_Controller == 9 then
-data.Ownerss = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 44 or data.The_Controller == 4 or data.The_Controller == 9 then
-data.SuperCreator = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 44 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 9 then
-data.Creator = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 44 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 6 or data.The_Controller == 9 then
-data.Manger = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 44 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 6 or data.The_Controller == 7 or data.The_Controller == 9 then
-data.Admin = true
-end
-if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 44 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 6 or data.The_Controller == 7 or data.The_Controller == 8 or data.The_Controller == 9 then
-data.Special = true
-end
-if text == "الحاسبه" or text == "اله حاسبه" or text == "الاله الحاسبه" then
-Redis:del(black..msg.sender_id.user_id..msg.chat_id.."num")
-start_mrkup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'ON', data = msg.sender_id.user_id..'ON'},{text = 'DEL', data = msg.sender_id.user_id..'DEL'},{text = 'AC', data = msg.sender_id.user_id..'rest'},{text = 'OFF', data = msg.sender_id.user_id..'OFF'},
-},
-{
-{text = '^', data = msg.sender_id.user_id..'calc&^'},{text = '√', data = msg.sender_id.user_id..'calc&√'},{text = '(', data = msg.sender_id.user_id..'calc&('},{text = ')', data = msg.sender_id.user_id..'calc&)'},
-},
-{
-{text = '7', data = msg.sender_id.user_id..'calc&7'},{text = '8', data = msg.sender_id.user_id..'calc&8'},{text = '9', data = msg.sender_id.user_id..'calc&9'},{text = '÷', data = msg.sender_id.user_id..'calc&/'},
-},
-{
-{text = '4', data = msg.sender_id.user_id..'calc&4'},{text = '5', data = msg.sender_id.user_id..'calc&5'},{text = '6', data = msg.sender_id.user_id..'calc&6'},{text = 'x', data = msg.sender_id.user_id..'calc&*'},
-},
-{
-{text = '1', data = msg.sender_id.user_id..'calc&1'},{text = '2', data = msg.sender_id.user_id..'calc&2'},{text = '3', data = msg.sender_id.user_id..'calc&3'},{text = '-', data = msg.sender_id.user_id..'calc&-'},
-},
-{
-{text = '0', data = msg.sender_id.user_id..'calc&0'},{text = '.', data = msg.sender_id.user_id..'calc&.'},{text = '+', data = msg.sender_id.user_id..'calc&+'},{text = '=', data = msg.sender_id.user_id..'equal'},
-},
-{
-{text = 'مطور السورس', url = 'https://t.me/R_p_9'},
-},
-}
-}
-send(msg.chat_id,msg.id,"• اهلا بك في بوت الحاسبه\n• welcome to calculator","md",true, false, false, true, start_mrkup)
-return false 
-end
 
 if text == 'ترتيب الاوامر' then
 if not msg.Manger then
@@ -17872,6 +17734,24 @@ send(msg_chat_id,msg_id,"⋆ ارسل لي التوجيه الان\n⋆ ليتم
 return false
 end
 
+if text == 'وش يقول' then 
+if tonumber(msg.reply_to_message_id) > 0 then
+local result = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
+if result.content.voice_note then 
+local mr = result.content.voice_note.voice.remote.id
+local File = json:decode(https.request('https://api.telegram.org/bot' .. Token .. '/getfile?file_id='..mr) ) 
+local voicee = 'https://api.telegram.org/file/bot'..Token..'/'..File.result.file_path
+local url = https.request("https://fastbotss.herokuapp.com/yt?vi="..voicee)
+local json = JSON.decode(url)
+if json and json.text then
+return send(msg.chat_id,msg.id,"• "..json.text)
+else
+return send(msg.chat_id,msg.id,"• تعذر التعرف علي الصوت")
+end
+end
+end
+end 
+
 if text == ("الردود العامه ⋆") then 
 if not msg.ControllerBot then 
 return send(msg_chat_id,msg_id,'\n*⋆ هذا الامر يخص '..Controller_Num(2)..' * ',"md",true)  
@@ -18292,7 +18172,7 @@ if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 
 local Text = data.query 
 if Text == '' then
-local input_message_content = {message_text = "٭ مرحبا عزيزي ، لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر الشخص \n ٭ مثال  @SIC4BOT هلا @A2NAA"}	
+local input_message_content = {message_text = "٭ مرحبا عزيزي ، لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر الشخص \n ٭ مثال  @SIC4BOT هلا @JJPJB"}	
 local resuult = {{
 type = 'article',
 id = math.random(1,64),
