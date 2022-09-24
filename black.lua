@@ -4257,7 +4257,7 @@ end
 ---if ban.first_name then
 ---news = " "..ban.first_name.." "
 --else
-:-news = " لا يوجد"
+--news = " لا يوجد" then
 --end
 --return LuaTele.sendText(msg_chat_id,msg_id,'\n▹︙ اسمك الأول : '..ban.first_name,"md",--true)
 --end
