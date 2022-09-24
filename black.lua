@@ -17733,7 +17733,6 @@ Redis:setex(Fast.."Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.u
 send(msg_chat_id,msg_id,"⋆ ارسل لي التوجيه الان\n⋆ ليتم نشره الى المشتركين","md",true)  
 return false
 end
-
 if text == 'وش يقول' then 
 if tonumber(msg.reply_to_message_id) > 0 then
 local result = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
