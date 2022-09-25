@@ -25613,7 +25613,7 @@ if Redis:get(KOIA..'Set:array'..IdUser..':'..ChatId) == 'true1' then
 Redis:del(KOIA..'Set:array'..IdUser..':'..ChatId)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '◜𝑠𝑜𝑢𝑟𝑐𝑒◞',url='http://t.me/'..chsource.."}},
+{text = '◜𝒔𝒐𝒖𝒓𝒄𝒆 𝒕𝒆𝒍𝒆𝒈𝒐𝒅◞', url = 't.me/CR_T2'},
 }
 local msg_idd = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&text='..URL.escape(" *⌯ تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
