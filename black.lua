@@ -792,7 +792,6 @@ elseif tonumber(Message) < 1000000 then
 MsgText = 'كتفم التفاعل لاجلك 😂⚡'
 end 
 return MsgText 
-end
 function Total_groups(Message)  
 local MsgText = ''  
 print(Message)
