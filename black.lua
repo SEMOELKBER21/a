@@ -12487,7 +12487,7 @@ data = {
 {text = '{ نعم }', data = msg.sender_id.user_id..'/Nzlne'},{text = '{ لا }', data = msg.sender_id.user_id..'/noNzlne'},
 },
 {
-{text = '◜𝑠𝑜𝑢𝑟𝑐𝑒◞', url = 't.me/'..chsource.."}, 
+{text = '◜𝑠𝑜𝑢𝑟𝑐𝑒◞', url = 't.me/"..chsource.."}, 
 },
 }
 }
