@@ -25620,7 +25620,7 @@ return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?ch
 else
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '◜𝑠𝑜𝑢𝑟𝑐𝑒◞',url='http://t.me/'..chsource.."}},
+{text = '◜𝒔𝒐𝒖𝒓𝒄𝒆 𝒕𝒆𝒍𝒆𝒈𝒐𝒅◞', url = 't.me/CR_T2'}, 
 }
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&text='..URL.escape(" *⌯ تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
