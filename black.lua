@@ -24091,9 +24091,6 @@ data = {
 {text = 'اضفني لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '‹ تنصيب بوت ›', url = 't.me/'SuorceTeleGodbot'},
-},
-{
 {text = '◜𝑠𝑜𝑢𝑟𝑐𝑒◞', url = 't.me/'..chsource.."}, 
 },
 }
