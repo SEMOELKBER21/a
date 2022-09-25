@@ -17782,10 +17782,6 @@ if text == ("الرتب المضافه") then
   if not msg.Asasy then
   return send(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)  
   end
-  if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..chsource.."}, },}}
-  return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-  end
 local rtb_list = Redis:smembers(KOIA.."rowtab:")
 if #rtb_list == 0 then return send(msg_chat_id,msg_id,'⌯ لايوجد رتب مضافه ف البوت',"md",true)  end
 rtb = "الرتب المضافه في البوت \n• — — — — — — — — — •\n"
