@@ -17505,10 +17505,6 @@ if text == "حذف قسم" then
   if not msg.Devss then
   return send(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
   end
-  if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..chsource.."}, },}}
-  return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-  end
   local list = Redis:smembers(KOIA.."List:Sections:inline")
   text = "⌯ قائمه الاقسام \n• — — — — — — — — — •\n"
   for k,v in pairs(list) do
