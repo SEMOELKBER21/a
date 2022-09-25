@@ -791,8 +791,8 @@ MsgText = 'تفاعل ام عبير وهي بتكلم ام صلاح عشان ت�
 elseif tonumber(Message) < 1000000 then 
 MsgText = 'كتفم التفاعل لاجلك 😂⚡'
 end 
-return MsgText 
 
+return MsgText 
 function Total_groups(Message)  
 local MsgText = ''  
 print(Message)
