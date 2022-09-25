@@ -15465,7 +15465,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '◜𝑠𝑜𝑢𝑟𝑐𝑒◞', url = 't.me/'..chsource.."}, 
+{text = '◜𝒔𝒐𝒖𝒓𝒄𝒆 𝒕𝒆𝒍𝒆𝒈𝒐𝒅◞', url = 't.me/CR_T2'},
 },
 }
 }
