@@ -792,39 +792,6 @@ elseif tonumber(Message) < 1000000 then
 MsgText = 'كتفم التفاعل لاجلك 😂⚡'
 end 
 
-return MsgText 
-function Total_groups(Message)  
-local MsgText = ''  
-print(Message)
-if tonumber(Message) < 100 then 
-MsgText = 'انت مش بتتفاعل لي ؟'
-elseif tonumber(Message) < 200 then 
-MsgText = 'متشد شويه في التفاعل'
-elseif tonumber(Message) < 400 then 
-MsgText = 'انتي مكسوفه تتكلمي يبطه 🙈'
-elseif tonumber(Message) < 700 then 
-MsgText = 'في احسن من كدا هه'
-elseif tonumber(Message) < 1200 then 
-MsgText = 'انا عاوزك تولعها 😂🔥'
-elseif tonumber(Message) < 2000 then 
-MsgText = 'انت متفاعل يبن عمي'
-elseif tonumber(Message) < 3500 then 
-MsgText = 'بحبك اتفاعل كمان بقا 🥺♥'
-elseif tonumber(Message) < 4000 then 
-MsgText = 'استمر يبن عمي 😂🔥'
-elseif tonumber(Message) < 4500 then 
-MsgText = 'عاش كيك ليك'
-elseif tonumber(Message) < 5500 then 
-MsgText = 'انت مولعها وخاربها هنا 😂♥🔥'
-elseif tonumber(Message) < 7000 then 
-MsgText = 'تفاعل مفاعل نووي 😂⚡'
-elseif tonumber(Message) < 9500 then 
-MsgText = 'تفاعل ام عبير وهي بتكلم ام صلاح عشان تجوز صلاح لعبير'
-elseif tonumber(Message) < 1000000 then 
-MsgText = 'كتفم التفاعل لاجلك 😂⚡'
-end 
-return MsgText 
-end
 
 function Getpermissions(ChatId)
 local Get_Chat = bot.getChat(ChatId)
